@@ -1,4 +1,9 @@
 package com.example.api.rules;
 
-public class DiscountRule {
+import com.example.api.model.BasketItem;
+import java.util.List;
+
+public interface DiscountRule {
+    String getName();
+    DiscountResult apply(List<BasketItem> items);
 }
