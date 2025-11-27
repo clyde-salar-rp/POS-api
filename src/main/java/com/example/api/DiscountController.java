@@ -12,7 +12,7 @@ public class DiscountController {
     private final DiscountEngine engine;
 
     public DiscountController() {
-        // Configure your rules here - change anytime!
+        // Rules configured here
         this.engine = new DiscountEngine()
                 .addRule(new BuyOneGetOne("BEVERAGE"))
                 .addRule(new PercentOff(10, "FOOD"))
