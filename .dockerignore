@@ -1,0 +1,29 @@
+# Ignore build outputs
+build/
+.gradle/
+out/
+
+# Ignore IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Ignore version control
+.git/
+.gitignore
+
+# Ignore documentation
+*.md
+README.md
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore test files
+src/test/
+
+# Ignore Gradle wrapper jar (will be downloaded during build)
+# Comment this out if you want to cache the wrapper
+# gradle/wrapper/gradle-wrapper.jar
