@@ -37,4 +37,21 @@ class DiscountEngineTest {
         assertEquals(1.0, response.getTotalDiscount()); // 10% off
         assertEquals(9.0, response.getSubtotal());
     }
+
+    @Test
+    void testMutuallyExclusiveRules() {
+        DiscountEngine engine = new DiscountEngine()
+                .addRule(new BuyOneGetOne("BEVERAGE"))
+                .addRule(new PercentOff(10, "BEVERAGE"));
+
+        DiscountRequest request = new DiscountRequest(List.of(
+                new BasketItem("001", "Coke", 2.00, 2, "BEVERAGE")
+        ));
+
+        DiscountResponse response = engine.calculate(request);
+
+        // Should only get BOGO discount (better than 10%)
+        assertEquals(2.0, response.getTotalDiscount());
+        assertEquals(1, response.getAppliedDiscounts().size());
+    }
 }

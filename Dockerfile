@@ -16,7 +16,10 @@ COPY src src
 # Make gradlew executable
 RUN chmod +x ./gradlew
 
-# Build the application (skip tests for faster builds)
+# Run tests first
+RUN ./gradlew test
+
+# Build the application (tests already ran, so we can skip them)
 RUN ./gradlew build -x test
 
 # Create final runtime image
