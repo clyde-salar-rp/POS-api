@@ -13,13 +13,12 @@ public class DiscountEngine {
     }
 
     public DiscountResponse calculate(DiscountRequest request) {
-        // Calculate original subtotal (before discount)
+        // Calculate original subtotal (sum of all items at full price)
         double originalSubtotal = request.getItems().stream()
                 .mapToDouble(item -> item.getPrice() * item.getQuantity())
                 .sum();
 
-        // Track best discount per item (by UPC)
-        // Map: UPC -> best RuleApplication for that item
+        // Track best discount per item (by UPC) for mutually exclusive rules
         Map<String, RuleApplication> bestDiscountPerItem = new HashMap<>();
 
         // Evaluate each rule
@@ -45,7 +44,7 @@ public class DiscountEngine {
                     if (item != null) {
                         String key = item.getUpc();
 
-                        // Compare rule applications: keep the one with highest total discount
+                        // Compare: keep the rule with highest discount
                         if (!bestDiscountPerItem.containsKey(key) ||
                                 ruleApp.totalAmount > bestDiscountPerItem.get(key).totalAmount) {
                             bestDiscountPerItem.put(key, ruleApp);
@@ -55,7 +54,7 @@ public class DiscountEngine {
             }
         }
 
-        // Collect unique rule applications that won
+        // Collect unique winning rules
         Map<String, AppliedDiscount> winningRules = new HashMap<>();
         double totalDiscount = 0.0;
 
@@ -71,25 +70,32 @@ public class DiscountEngine {
 
         List<AppliedDiscount> applied = new ArrayList<>(winningRules.values());
 
-        // Calculate discounted subtotal (after discount)
-        double discountedSubtotal = originalSubtotal - totalDiscount;
+        // Calculate amount after discount (for tax calculation)
+        double amountAfterDiscount = originalSubtotal - totalDiscount;
 
-        // Tax is calculated on the discounted subtotal
-        double tax = discountedSubtotal * 0.07; // 7% tax
+        // Tax is calculated on the discounted amount
+        double tax = amountAfterDiscount * 0.07; // 7% tax
 
-        // Final total
-        double total = discountedSubtotal + tax;
+        // Final total = discounted amount + tax
+        double total = amountAfterDiscount + tax;
 
+        // RETURN ORIGINAL SUBTOTAL (before discount)
+        // This follows retail best practice:
+        // Display will show:
+        //   SUBTOTAL: $18.54 (original)
+        //   DISCOUNT: -$7.12 (savings)
+        //   TAX (7%): $0.80  (on $11.42)
+        //      TOTAL: $12.22
         return new DiscountResponse(
-                discountedSubtotal,  // Return discounted subtotal (after discount)
-                tax,
-                total,
-                totalDiscount,
-                applied
+                originalSubtotal,      // ✅ Original subtotal BEFORE discount
+                tax,                   // Tax calculated on discounted amount
+                total,                 // Final total (discounted + tax)
+                totalDiscount,         // Total discount amount
+                applied                // List of applied discounts
         );
     }
 
-    // Helper class to track a rule application
+    // Helper class to track rule applications
     private static class RuleApplication {
         String ruleName;
         String description;
