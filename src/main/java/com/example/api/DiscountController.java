@@ -12,11 +12,18 @@ public class DiscountController {
     private final DiscountEngine engine;
 
     public DiscountController() {
-        // Rules configured here
         this.engine = new DiscountEngine()
-                .addRule(new BuyOneGetOne("BEVERAGE"))
-                .addRule(new PercentOff(10, "FOOD"))
-                .addRule(new BuyXGetY(3, 1, "MONSTER"));
+                // Fountain drinks: Buy 2, Get 1 Free
+                // Polar Pop costs $0.89-$1.09, 90%+ profit margin
+                .addRule(new BuyXGetY(2, 1, "POLAR POP"))
+
+                // Hot food bundle discount: 20% off when buying $8+ of food
+                // Encourages hot dog + taquito combos
+                .addRule(new PercentOff(20, "FOOD"))
+
+                // Energy drinks: Classic BOGO (buy 1 get 1 free)
+                // Applies to Monster, Red Bull, Rockstar, etc.
+                .addRule(new BuyOneGetOne("BEVERAGE"));
     }
 
     @PostMapping

@@ -1,19 +1,30 @@
-
 services:
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+      platforms:
+        - linux/amd64
+    platform: linux/amd64
     container_name: pos-api
     ports:
       - "8080:8080"
     environment:
-      - JAVA_OPTS=-Xmx512m -Xms256m
+      - JAVA_OPTS=-Xmx512m -Xms256m -XX:+UseContainerSupport
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/hello"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 40s
 
   test:
     image: eclipse-temurin:17-jdk-jammy
+    platform: linux/amd64
     volumes:
       - .:/app
     working_dir: /app
-    command: sh -c "chmod +x ./gradlew && ./gradlew test"
+    command: sh -c "sed -i 's/\r$//' ./gradlew && chmod +x ./gradlew && ./gradlew test"
     profiles:
       - test
