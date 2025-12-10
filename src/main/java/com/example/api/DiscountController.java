@@ -19,7 +19,7 @@ public class DiscountController {
 
                 // Hot food bundle discount: 20% off when buying $8+ of food
                 // Encourages hot dog + taquito combos
-                .addRule(new PercentOff(20, "FOOD"))
+                .addRule(new PercentOff(5, "FOOD"))
 
                 // Energy drinks: Classic BOGO (buy 1 get 1 free)
                 // Applies to Monster, Red Bull, Rockstar, etc.

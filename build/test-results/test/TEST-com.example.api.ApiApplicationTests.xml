@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.api.ApiApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-12-10T07:52:05.497Z" hostname="Mac.lan" time="0.261">
+<testsuite name="com.example.api.ApiApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-12-10T12:51:28.579Z" hostname="Mac.lan" time="0.266">
   <properties/>
-  <testcase name="contextLoads()" classname="com.example.api.ApiApplicationTests" time="0.261"/>
-  <system-out><![CDATA[15:52:05.067 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.api.ApiApplicationTests]: ApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-15:52:05.099 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.api.ApiApplication for test class com.example.api.ApiApplicationTests
+  <testcase name="contextLoads()" classname="com.example.api.ApiApplicationTests" time="0.266"/>
+  <system-out><![CDATA[20:51:28.133 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.api.ApiApplicationTests]: ApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:51:28.165 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.api.ApiApplication for test class com.example.api.ApiApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,9 +14,9 @@
 
  :: Spring Boot ::                (v4.0.0)
 
-2025-12-10T15:52:05.210+08:00  INFO 5885 --- [api] [    Test worker] com.example.api.ApiApplicationTests      : Starting ApiApplicationTests using Java 17.0.17 with PID 5885 (started by clydesalar in /Users/clydesalar/IdeaProjects/api)
-2025-12-10T15:52:05.210+08:00  INFO 5885 --- [api] [    Test worker] com.example.api.ApiApplicationTests      : No active profile set, falling back to 1 default profile: "default"
-2025-12-10T15:52:05.494+08:00  INFO 5885 --- [api] [    Test worker] com.example.api.ApiApplicationTests      : Started ApiApplicationTests in 0.354 seconds (process running for 0.714)
+2025-12-10T20:51:28.276+08:00  INFO 9329 --- [api] [    Test worker] com.example.api.ApiApplicationTests      : Starting ApiApplicationTests using Java 17.0.17 with PID 9329 (started by clydesalar in /Users/clydesalar/IdeaProjects/api)
+2025-12-10T20:51:28.276+08:00  INFO 9329 --- [api] [    Test worker] com.example.api.ApiApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T20:51:28.575+08:00  INFO 9329 --- [api] [    Test worker] com.example.api.ApiApplicationTests      : Started ApiApplicationTests in 0.367 seconds (process running for 0.745)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
