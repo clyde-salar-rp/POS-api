@@ -87,7 +87,7 @@ public class DiscountEngine {
         //   TAX (7%): $0.80  (on $11.42)
         //      TOTAL: $12.22
         return new DiscountResponse(
-                originalSubtotal,      // ✅ Original subtotal BEFORE discount
+                originalSubtotal,
                 tax,                   // Tax calculated on discounted amount
                 total,                 // Final total (discounted + tax)
                 totalDiscount,         // Total discount amount
