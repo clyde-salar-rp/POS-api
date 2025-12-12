@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.api.DiscountRuleCRUDTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2025-12-12T12:33:23.798Z" hostname="Mac.lan" time="0.1">
+  <properties/>
+  <testcase name="testGetAllRules()" classname="com.example.api.DiscountRuleCRUDTest" time="0.05"/>
+  <testcase name="testUpdateRule()" classname="com.example.api.DiscountRuleCRUDTest" time="0.006"/>
+  <testcase name="testDuplicateNameValidation()" classname="com.example.api.DiscountRuleCRUDTest" time="0.004"/>
+  <testcase name="testCreateBuyXGetYRule()" classname="com.example.api.DiscountRuleCRUDTest" time="0.002"/>
+  <testcase name="testPriorityOrdering()" classname="com.example.api.DiscountRuleCRUDTest" time="0.015"/>
+  <testcase name="testGetActiveRulesOnly()" classname="com.example.api.DiscountRuleCRUDTest" time="0.005"/>
+  <testcase name="testValidationPercentOffRange()" classname="com.example.api.DiscountRuleCRUDTest" time="0.002"/>
+  <testcase name="testDeleteRule()" classname="com.example.api.DiscountRuleCRUDTest" time="0.006"/>
+  <testcase name="testValidationBuyXGetYRequiredFields()" classname="com.example.api.DiscountRuleCRUDTest" time="0.002"/>
+  <testcase name="testToggleActive()" classname="com.example.api.DiscountRuleCRUDTest" time="0.002"/>
+  <testcase name="testCreatePercentOffRule()" classname="com.example.api.DiscountRuleCRUDTest" time="0.002"/>
+  <system-out><![CDATA[2025-12-12T20:33:23.796+08:00  INFO 20863 --- [api] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.api.DiscountRuleCRUDTest]: DiscountRuleCRUDTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-12-12T20:33:23.797+08:00  INFO 20863 --- [api] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.api.ApiApplication for test class com.example.api.DiscountRuleCRUDTest
+Hibernate: select dre1_0.id from discount_rules dre1_0 where dre1_0.name=? fetch first ? rows only
+Hibernate: insert into discount_rules (active,bundle_price,buy_quantity,category,created_at,description,free_quantity,item_keyword,name,percent_off,priority,required_quantity,rule_type,updated_at,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: select dre1_0.id from discount_rules dre1_0 where dre1_0.name=? fetch first ? rows only
+Hibernate: insert into discount_rules (active,bundle_price,buy_quantity,category,created_at,description,free_quantity,item_keyword,name,percent_off,priority,required_quantity,rule_type,updated_at,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: select dre1_0.id,dre1_0.active,dre1_0.bundle_price,dre1_0.buy_quantity,dre1_0.category,dre1_0.created_at,dre1_0.description,dre1_0.free_quantity,dre1_0.item_keyword,dre1_0.name,dre1_0.percent_off,dre1_0.priority,dre1_0.required_quantity,dre1_0.rule_type,dre1_0.updated_at from discount_rules dre1_0
+Hibernate: select dre1_0.id from discount_rules dre1_0 where dre1_0.name=? fetch first ? rows only
+Hibernate: insert into discount_rules (active,bundle_price,buy_quantity,category,created_at,description,free_quantity,item_keyword,name,percent_off,priority,required_quantity,rule_type,updated_at,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: select dre1_0.id from discount_rules dre1_0 where dre1_0.name=? fetch first ? rows only
+Hibernate: insert into discount_rules (active,bundle_price,buy_quantity,category,created_at,description,free_quantity,item_keyword,name,percent_off,priority,required_quantity,rule_type,updated_at,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: select dre1_0.id from discount_rules dre1_0 where dre1_0.name=? fetch first ? rows only
+Hibernate: select dre1_0.id from discount_rules dre1_0 where dre1_0.name=? fetch first ? rows only
+Hibernate: insert into discount_rules (active,bundle_price,buy_quantity,category,created_at,description,free_quantity,item_keyword,name,percent_off,priority,required_quantity,rule_type,updated_at,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: select dre1_0.id from discount_rules dre1_0 where dre1_0.name=? fetch first ? rows only
+Hibernate: insert into discount_rules (active,bundle_price,buy_quantity,category,created_at,description,free_quantity,item_keyword,name,percent_off,priority,required_quantity,rule_type,updated_at,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: update discount_rules set active=?,bundle_price=?,buy_quantity=?,category=?,created_at=?,description=?,free_quantity=?,item_keyword=?,name=?,percent_off=?,priority=?,required_quantity=?,rule_type=?,updated_at=? where id=?
+Hibernate: select dre1_0.id from discount_rules dre1_0 where dre1_0.name=? fetch first ? rows only
+Hibernate: insert into discount_rules (active,bundle_price,buy_quantity,category,created_at,description,free_quantity,item_keyword,name,percent_off,priority,required_quantity,rule_type,updated_at,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: update discount_rules set active=?,bundle_price=?,buy_quantity=?,category=?,created_at=?,description=?,free_quantity=?,item_keyword=?,name=?,percent_off=?,priority=?,required_quantity=?,rule_type=?,updated_at=? where id=?
+Hibernate: select dre1_0.id,dre1_0.active,dre1_0.bundle_price,dre1_0.buy_quantity,dre1_0.category,dre1_0.created_at,dre1_0.description,dre1_0.free_quantity,dre1_0.item_keyword,dre1_0.name,dre1_0.percent_off,dre1_0.priority,dre1_0.required_quantity,dre1_0.rule_type,dre1_0.updated_at from discount_rules dre1_0 where dre1_0.active=true order by dre1_0.priority desc
+Hibernate: select dre1_0.id from discount_rules dre1_0 where dre1_0.name=? fetch first ? rows only
+Hibernate: insert into discount_rules (active,bundle_price,buy_quantity,category,created_at,description,free_quantity,item_keyword,name,percent_off,priority,required_quantity,rule_type,updated_at,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: select dre1_0.id from discount_rules dre1_0 where dre1_0.name=? fetch first ? rows only
+Hibernate: insert into discount_rules (active,bundle_price,buy_quantity,category,created_at,description,free_quantity,item_keyword,name,percent_off,priority,required_quantity,rule_type,updated_at,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: update discount_rules set active=?,bundle_price=?,buy_quantity=?,category=?,created_at=?,description=?,free_quantity=?,item_keyword=?,name=?,percent_off=?,priority=?,required_quantity=?,rule_type=?,updated_at=? where id=?
+Hibernate: select dre1_0.id,dre1_0.active,dre1_0.bundle_price,dre1_0.buy_quantity,dre1_0.category,dre1_0.created_at,dre1_0.description,dre1_0.free_quantity,dre1_0.item_keyword,dre1_0.name,dre1_0.percent_off,dre1_0.priority,dre1_0.required_quantity,dre1_0.rule_type,dre1_0.updated_at from discount_rules dre1_0 where dre1_0.active=true order by dre1_0.priority desc
+Hibernate: select dre1_0.id from discount_rules dre1_0 where dre1_0.name=? fetch first ? rows only
+Hibernate: select dre1_0.id from discount_rules dre1_0 where dre1_0.name=? fetch first ? rows only
+Hibernate: insert into discount_rules (active,bundle_price,buy_quantity,category,created_at,description,free_quantity,item_keyword,name,percent_off,priority,required_quantity,rule_type,updated_at,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: select count(*) from discount_rules dre1_0 where dre1_0.id=?
+Hibernate: select dre1_0.id from discount_rules dre1_0 where dre1_0.name=? fetch first ? rows only
+Hibernate: select dre1_0.id from discount_rules dre1_0 where dre1_0.name=? fetch first ? rows only
+Hibernate: insert into discount_rules (active,bundle_price,buy_quantity,category,created_at,description,free_quantity,item_keyword,name,percent_off,priority,required_quantity,rule_type,updated_at,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: select dre1_0.id from discount_rules dre1_0 where dre1_0.name=? fetch first ? rows only
+Hibernate: insert into discount_rules (active,bundle_price,buy_quantity,category,created_at,description,free_quantity,item_keyword,name,percent_off,priority,required_quantity,rule_type,updated_at,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,default)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
